@@ -145,7 +145,7 @@
 
 .section__subtitle {
   color: var(--section-header-color);
-  font-weight: bold;
+  font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
   background-color: var(--header-subtitle-background-color);
@@ -153,6 +153,7 @@
 
 .bold-subtitle-advice {
   margin-block-end: 20px;
+  font-weight: bold;
 }
 
 .section__paragraph {
@@ -182,6 +183,7 @@
 
 .bold-subtitle-images {
   margin-block-start: 30px;
+  font-weight: bold;
 }
 
 .gallery {
@@ -210,13 +212,16 @@
     grid-template-columns: 1fr 1fr;
     padding: 20px 20px 0 20px;
     min-block-size: 1024px;
+    
   }
 
   .logo {
+    position: relative;
     grid-column: span 2;
-    margin-inline-start: -20px;
+    margin-inline-start: -20px;    
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     line-height: 99px;
+    top: -10px;
   }
 
   .decorated-zone::before {
@@ -236,17 +241,21 @@
 
   .header__theme-menu {
     grid-column: 2;
+    margin-block-start: -12px;
   }
 
   .header__subtitle {
+    position: relative;
     grid-column: 2 / 3;
     justify-self: end;
+    top: -10px;
   }
 
   .main {
     gap: 80px;
     margin-block: 60px;
     padding-inline: 20px;
+    padding-top: 1px;
   }
 
   .section p {
@@ -271,7 +280,7 @@
     padding: 0;
   }
 
-  .section__hard-article {
+  .section__hard .section__article {
     grid-column: 2;
   }
 
@@ -288,10 +297,10 @@
   .section__attention .section__title {
     position: relative;
     justify-self: start;
-    padding: 0;
+    padding: 0;   
   }
 
-  .section__attention-article {
+  .section__attention .section__article {
     grid-column: span 2;
   }
 
@@ -309,22 +318,17 @@
   .section__advice .section__title {
     position: relative;
     grid-column: 1;
-    grid-row: 1;
+    grid-row:  1 / 3;
     padding: 0;
   }
 
   .bold-subtitle-advice {
+    margin-block-end: 0;
     grid-column: 2;
-    grid-row: 1;
+ 
   }
 
-  .section__article-advice:first-of-type {
-    grid-column: 2;
-    grid-row: 1;
-    margin-block-start: 40px;
-  }
-
-  .section__article-advice:not(:first-of-type) {
+  .section__advice .section__article{
     grid-column: 2;
   }
 
@@ -378,12 +382,13 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    margin-block-end: 20px;
+ 
     min-block-size: 1024px;
   }
 
   .footer .logo {
     margin-inline-start: 0;
+    margin-block-start: 17px;
   }
 }
 
@@ -421,9 +426,11 @@
   }
 
   .header__theme-menu {
+    position: relative;
     grid-column: span 2;
     justify-self: center;
     align-self: start;
+    top: 12px;
   }
 
   .header__theme-menu-list {
@@ -434,57 +441,56 @@
     padding-top: 0;
   }
 
-  .section__hard-article {
+  .section__hard .section__article {
     grid-column: 2 / 4;
   }
 
   .section__attention {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    gap: 20px;
+  }
+   
+  .section__attention .section__title {
+    max-width: 30%;
+    grid-column: 1 / 4;
+ 
+  }
+
+  .section__attention .section__article {
+    grid-row: auto ;
+    grid-column: auto;
+  }
+
+  .section__advice {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
     gap: 20px;
     padding-top: 0;
     padding-right: 0;
-    padding-bottom: 80px;
+    padding-bottom: 79px;
     padding-left: 0;
-  }
+}
 
-  .section__attention .section__title {
-    grid-column: 1;
-    grid-row: 1;
-    padding: 0;
-  }
-
-  .section__attention-article:nth-child(1) {
-    grid-column: 1;
-  }
-
-  .section__attention-article:nth-child(2) {
-    grid-column: 1;
-  }
-
-  .section__attention-article:nth-child(3) {
-    grid-column: 2;
-  }
-
-  .section__attention-article:nth-child(4) {
-    grid-column: 3;
-  }
 
   .bold-subtitle-advice {
     grid-column: 2 / 4;
   }
+ 
 
-  .section__article-advice:first-of-type {
+  .section__advice .section__article:first-of-type {
     position: relative;
     top: 2px;
     grid-column: 2 / 4;
+   
   }
 
-  .section__article-advice:not(:first-of-type) {
+  .section__advice .section__article:not(:first-of-type) {
     position: relative;
     top: 2px;
     grid-column: 2 / 4;
+   
   }
 
   .footer {
@@ -493,7 +499,7 @@
   }
 
   .footer .logo {
-    top: 0;
+    top: -8px;
     line-height: 82.5%;
   }
 }

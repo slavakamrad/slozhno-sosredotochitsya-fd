@@ -19,9 +19,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  .rec-div {
-    display: none;
-  }
+ 
   :root {
     --font-color: #353430;
     --font-family: "IBM Plex mono", monospace;
@@ -36,6 +34,10 @@
     --section-subtitle-bg-color:  #ff0070;
     --button-color: #353430;
     --button-color-hover: rgba(50, 49, 45, 0.4);
+  }
+
+   .rec-div {
+    display: none;
   }
 }
  

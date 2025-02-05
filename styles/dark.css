@@ -12,6 +12,9 @@
   --section-subtitle-bg-color:  #ff0070;
   --button-color: #ff0070;
   --button-color-hover: rgba(255, 0, 112, 0.4);
-}
 
+  .rec-div {
+    display: inline-block;
+  }
+}
  
